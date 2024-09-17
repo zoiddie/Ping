@@ -1,29 +1,27 @@
-# Ping Plugin
+<h1 align="center">Ping Plugin</h1>
 
-An ping plugin that is very useful and configurable
+A lightweight and highly configurable plugin designed to check player ping with ease. Perfect for any server where knowing the player's connection latency is crucial!
 
 ## Commands
 
-1. /ping (Permission - zoid.ping)
-2. /ping reload (Permission - Opreator)
+1. **/ping** — Displays your ping (Permission: `zoid.ping`)
+2. **/ping reload** — Reloads the plugin configuration (Permission: Operator)
 
 ## Configuration
 
-```actionbar: true
+Easily customize how ping information is displayed, whether in the action bar, chat, or with sounds.
+
+```yaml
+actionbar: true
 chat: true
 sound: true
 
 message-1-argument: "<green>Your ping is <#0ecc1e>%ping%ms</green>"
 message-2-argument: "<green>%player%'s ping is <#0ecc1e>%ping%ms</green>"
-player-not-found-message: "<red>The player does not exist on the server"
-reload-message: "<green>Configuration reloaded."
+player-not-found-message: "<red>The player does not exist on the server</red>"
+reload-message: "<green>Configuration reloaded.</green>"
 
 sounds:
   ping-check: "ENTITY_EXPERIENCE_ORB_PICKUP"
   player-not-found: "entity.villager.trade"
   config-reload: "BLOCK_NOTE_BLOCK_PLING"
-```
-
-## Support
-
-https://discord.gg/7hA7xNaX
