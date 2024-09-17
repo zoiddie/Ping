@@ -19,6 +19,12 @@ sound: true
 message-1-argument: "<green>Your ping is <#0ecc1e>%ping%ms</green>"
 message-2-argument: "<green>%player%'s ping is <#0ecc1e>%ping%ms</green>"
 player-not-found-message: "<red>The player does not exist on the server</red>"
+
+## Instalation
+
+1. Download the plugin from (Releases)[https://github.com/zoiddie/Ping/releases/]
+2. Drop the plugin into the plugins folder in your server.
+3. Restart or start the server.
 reload-message: "<green>Configuration reloaded.</green>"
 
 sounds:
