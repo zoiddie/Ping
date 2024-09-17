@@ -9,7 +9,7 @@ A lightweight and highly configurable plugin designed to check player ping with 
 
 ## Instalation
 
-1. Download the plugin from (Releases)[https://github.com/zoiddie/Ping/releases/]
+1. Download the plugin from [Releases](https://github.com/zoiddie/Ping/releases/)
 2. Drop the plugin into the plugins folder in your server.
 3. Restart or start the server.
 reload-message: "<green>Configuration reloaded.</green>"
