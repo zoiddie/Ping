@@ -34,4 +34,8 @@ reload-message: "<green>Configuration reloaded.</green>"
 sounds:
   ping-check: "ENTITY_EXPERIENCE_ORB_PICKUP"
   player-not-found: "entity.villager.trade"
-  config-reload: "BLOCK_NOTE_BLOCK_PLING"```
+  config-reload: "BLOCK_NOTE_BLOCK_PLING"
+
+right-click-ping:
+  enabled: true
+  message: "<green>%player%'s ping is %ping%ms"```
