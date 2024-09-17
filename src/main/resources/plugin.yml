@@ -1,0 +1,16 @@
+name: Ping
+version: '1.0'
+main: dev.zoid.ping.Ping
+api-version: '1.21'
+commands:
+  ping:
+    description: Check your ping or another player's ping
+    usage: /<command> [player]
+    aliases: [latency]
+    permission: zoid.ping
+    permission-message: You don't have permission to use this command.
+
+permissions:
+  zoid.ping:
+    description: Allows the user to check ping
+    default: true
