@@ -4,8 +4,12 @@ A lightweight and highly configurable plugin designed to check player ping with 
 
 ## Commands
 
-1. **/ping** — Displays your ping (Permission: `zoid.ping`)
-2. **/ping reload** — Reloads the plugin configuration (Permission: Operator)
+| Command           | Action                                         |
+|-------------------|:-----------------------------------------------|
+| `/ping`           | Displays your ping (Permission: `zoid.ping`)   |
+| `/ping reload`    | Reloads the plugin configuration (Permission: Operator) |
+
+<hr>
 
 ## Instalation
 
