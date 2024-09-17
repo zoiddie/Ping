@@ -14,3 +14,6 @@ permissions:
   zoid.ping:
     description: Allows the user to check ping
     default: true
+  zoid.ping.reload:
+    description: Allows the user to reload the plugin configuration
+    default: op

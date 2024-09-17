@@ -9,12 +9,15 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
-public class Ping extends JavaPlugin implements CommandExecutor {
+public class Ping extends JavaPlugin implements CommandExecutor, Listener {
 
     private FileConfiguration config;
 
@@ -23,6 +26,7 @@ public class Ping extends JavaPlugin implements CommandExecutor {
         saveDefaultConfig();
         config = getConfig();
         Objects.requireNonNull(getCommand("ping")).setExecutor(this);
+        getServer().getPluginManager().registerEvents(this, this);
     }
 
     @Override
@@ -70,14 +74,32 @@ public class Ping extends JavaPlugin implements CommandExecutor {
         return true;
     }
 
+    @EventHandler
+    public void onPlayerInteract(PlayerInteractEntityEvent event) {
+        if (!config.getBoolean("right-click-ping.enabled", true)) {
+            return;
+        }
+
+        if (event.getRightClicked() instanceof Player) {
+            Player clicker = event.getPlayer();
+            Player clicked = (Player) event.getRightClicked();
+            int ping = clicked.getPing();
+            String message = config.getString("right-click-ping.message", "<green>%player%'s ping is %ping%ms");
+            message = message.replace("%player%", clicked.getName()).replace("%ping%", String.valueOf(ping));
+
+            Component component = MiniMessage.miniMessage().deserialize(message);
+            clicker.sendActionBar(component);
+        }
+    }
+
     private void sendPingMessage(Player sender, Player target) {
         int ping = target.getPing();
         String message;
 
         if (sender == target) {
-            message = config.getString("message-1-argument", "&aYour ping is #0ecc1e%ping%ms");
+            message = config.getString("message-1-argument", "<green>Your ping is <#0ecc1e>%ping%ms</green>");
         } else {
-            message = config.getString("message-2-argument", "&a%player%'s ping is #0ecc1e%ping%ms");
+            message = config.getString("message-2-argument", "<green>%player%'s ping is <#0ecc1e>%ping%ms</green>");
             message = message.replace("%player%", target.getName());
         }
 
