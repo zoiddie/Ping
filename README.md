@@ -38,4 +38,4 @@ sounds:
 
 right-click-ping:
   enabled: true
-  message: "<green>%player%'s ping is %ping%ms"```
+  message: "<green>%player%'s ping is %ping%ms"/```
